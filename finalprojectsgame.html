@@ -8,14 +8,22 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | ALIENated</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Final Project.json", {onProgress: UnityProgress});
+    </script>
 <style>
 .para1 {
     /* The image used */
     background-image: url("https://veritas-europe.com/wp-content/uploads/2017/04/handsjpg-585x306.jpg");
-
     /* Set a specific height */
     min-height: 500px;
-
     /* Create the parallax scrolling effect */
 		-webkit-background-size: contain;
 		-moz-background-size: contain;
@@ -25,14 +33,11 @@
     background-repeat: no-repeat;
     background-size: contain ;
 }
-
 .para2 {
     /* The image used */
     background-image: url("https://uploads.toptal.io/blog/category/logo/63/unity_unity3d.png");
-
     /* Set a specific height */
     min-height: 500px;
-
     /* Create the parallax scrolling effect */
 		-webkit-background-size: cover 30px;
 		-moz-background-size: cover 30px;
@@ -41,16 +46,12 @@
     background-position: center right 215px ;
     background-repeat: repeat;
     background-size: cover 30px;
-
 }
 .para3 {
     /* The image used */
     background-image: url("https://img0.etsystatic.com/170/0/14398010/il_fullxfull.1188145418_2xoy.jpg");
-
-
     /* Set a specific height */
     min-height: 500px;
-
     /* Create the parallax scrolling effect */
 		-webkit-background-size: cover 10px;
 		-moz-background-size: cover 10px;
@@ -63,10 +64,8 @@
 .para5 {
     /* The image used */
     background-image: url("http://sourcessupergala.ca/wp-content/uploads/2015/12/Sources-Logo-TRANSPARENT.png");
-
     /* Set a specific height */
     min-height: 500px;
-
     /* Create the parallax scrolling effect */
 		-webkit-background-size: contain 2px;
 		-moz-background-size: contain 2px;
@@ -79,7 +78,6 @@
 .container1 {
   background-size: contain;
   border: 5px;
-
 }
   #container {
     width:1100px;
@@ -229,16 +227,21 @@ body {
 	</div>
 </div>
 <div id="playgame">
-<a href="https://tinatrann.github.io/gwcfinalproject/game.html"><div class="para3">
-<img src="https://scontent-dft4-1.xx.fbcdn.net/v/t35.0-12/s2048x2048/20707317_2088624191163454_947810484_o.png?oh=405fde4048c590770da2effe16cdb102&oe=598A53DA" alt="howtoplay1" style="width:100%;height:380px;margin: auto">
-</div>
-<h3>Play</h3></a>
+<div class="webgl-content" style="float: center">
+      <div id="gameContainer" style="width: 565px; height: 354px; float: center;">
+	<canvas id="#canvas" width="565" height="354" style="cursor: default;"></canvas></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">Click here for fullscreen</div>
+      </div>
+    </div>
 </div>
 <div id="aboutcreators">
 <h3>About the Creators</h3>
  <img src="https://static1.squarespace.com/static/5202a418e4b078b439d73634/t/565b285ce4b0acafe12093e1/1448814686117/gwclogo1.png" width="500" height="350" alt="Computer Hope">
 	<br>Under construction...</br>
-	<br>This summer the four of us met during Girls Who Code. For our final projects we wanted to focus on discrimination because recently on the news and on social media, cases of police brutality were against people of color. Marielle and Lyca worked on the game using Unity. Yessenia drew the characters for our game. She likes DIY projects and says Kermit the Frog is her spirit animal. Tina designed the layout for the website. She enjoys writing snd likes interior designing.<br>
+	<br>This summer the four of us met during Girls Who Code. For our final projects we wanted to focus on discrimination because recently on the news and on social media, cases of police brutality were against people of color. Marielle and Lyca worked on the game using Unity. Marielle likes digital art and reading. Yessenia drew the characters for our game. She likes DIY projects and says Kermit the Frog is her spirit animal. Tina designed the layout for the website. She enjoys writing and likes interior designing.<br>
 </div>
 <div id="picturesources">
 <h3>Picture Sources</h3>
@@ -250,11 +253,9 @@ body {
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);
-
 function plusDivs(n) {
   showDivs(slideIndex += n);
 }
-
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("carousel-inner");
